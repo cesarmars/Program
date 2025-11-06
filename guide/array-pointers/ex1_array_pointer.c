@@ -25,7 +25,7 @@ int main() {
 	printf("Pointer to the first element %d and the address %p\n", *arr, arr);
 	printf("Pointer to the second element %d and the address %p\n", *(arr + 1), arr + 1);
 	// etc...
-	printf("the length of the int array is %lu and the size of the int array is %lu bytes\n", sizeof(arr)/sizeof(*arr), sizeof(arr));
+	printf("the size of the int array is %lu bytes and the length of the int array is %d\n", sizeof(arr), sizeof(arr)/sizeof(*arr));
 
 	return 0;
 
