@@ -8,18 +8,20 @@ typedef struct {
 }Array;
 
 int main() {
-	int y[] = {2,0};
-	Array *x;
-	*x.target = 10;
-	memcpy(*x.arr, y, sizeof(y));
+	/* pointer notation */
+	int i[] = {2,0};
+	Array x;
+	Array *ptr = &x;
+	ptr->target = 10; // or (*ptr).target
+	memcpy(ptr->arr, i, sizeof(ptr->arr)); // or (*ptr).arr
+	printf("%lu\n", sizeof(ptr->arr));
 
-	printf("")
-	
-
-	
-	
-
-
+	/* dot notation*/
+	int j[] = {1,2};
+	Array y;
+	y.target = 20;
+	memcpy(y.arr, j, sizeof(y.arr));
+	printf("%lu\n", sizeof(y.arr));
 
 	return 0;
 

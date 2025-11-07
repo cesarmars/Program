@@ -19,7 +19,6 @@ struct Class make_course(const char *course, const char *id, const char *prof) {
 int main() {
 	struct Class cs61c = make_course("Computer Science", "61c", "Dan Garcia");
 	printf("Course is %s %s taught by %s\n", cs61c.course, cs61c.id, cs61c.prof);
-
 	printf("sizeof struct Class: %lu bytes\n", sizeof(cs61c));
 
 	return 0;
