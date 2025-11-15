@@ -4,19 +4,33 @@
 int main() {
 	/* string array(array indexing) */
 	char str[] = "hello";
+
 	/* string array: printing the individual chars and addresses*/
 	printf("first character of the array is %c and its address is %p\n", str[0], &str[0]);
 	printf("last character of the array is %d (null terminator) and its address is %p\n", str[5], &str[5]);
+
 	/* size of the char array and length*/
 	printf("size of the array is %lu bytes\n", sizeof(str));
 	printf("length of the array using strlen operator is %lu (excludes the null terminator)\n", strlen(str));
 	printf("true length of the array is %lu (including the null terminator)\n", sizeof(str)/sizeof(str[0]));
+	
 	/* iterating through the char array of the string "hello" */
 	for(int i = 0; i < strlen(str); i++)
 		printf("index[%d] = %d, %p\n", i, str[i], &str[i]);
 
 	/* string array(pointer arithemetic) */
-	char world_str[6];
+	char hey_str[4];
+	*hey_str = 'h';
+	*(hey_str + 1) = 'e';
+	*(hey_str + 2) = 'y';
+	*(hey_str + 3) = '\0';
+	printf("hey_str: %s\n", hey_str);
+	
+	/* string literal, read-only, the string lives in static memory can not be altered */
+	const char *name = "jeff";
+	printf("sizeof name: %lu bytes \n", sizeof(name));
+
+
 
 
 	return 0;
