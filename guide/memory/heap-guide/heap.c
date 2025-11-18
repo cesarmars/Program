@@ -29,6 +29,12 @@ int main() {
 	/* print each elements address, grows upwards */	
 	for(int i = 0; i < t_len; i ++)
 		printf("%p\n", str + i);
+
+	const char *hey = "hey";	
+	char *temp = realloc(str, 4);
+	temp = str;
+	memcpy(temp, hey, 4);
+
 		
 	free(str);
 	return 0;
