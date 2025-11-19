@@ -46,9 +46,9 @@ int main() {
 	int *nums = calloc(2, sizeof(*nums));
 	printf("[%d, %d]\n", *nums, *(nums + 1));
 	int option[] = {10,20,30,50,90,200};
-	memcpy(nums, option, 2 * sizeof(*nums));
+	memcpy(nums, option + 4, 2 * sizeof(*nums));
 	printf("[%d, %d]\n", *nums, *(nums + 1));
-			   
+	nums = realloc(nums, 0);			   
 	
 		
 			   

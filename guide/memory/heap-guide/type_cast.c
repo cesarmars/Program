@@ -5,10 +5,16 @@
 int main() {
 	/* explicit typecasting heap */
 	int cap = strlen("cesar") + 1;
-	char *name = (char *) malloc(cap * sizeof(*name));
-	strcpy(name, "cesar");
-	printf("my name is %s\n", name);
-	free(name);
+	char *name = (char *) calloc(cap, sizeof(*name));
+	name = realloc(name, 100 * sizeof(*name));
+
+	if (name == NULL) {
+		printf("error\n");
+		name = realloc(name, 0);
+		return 1;
+	}
+
+
 	return 0;
 }
 
