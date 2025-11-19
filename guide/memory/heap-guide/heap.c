@@ -4,8 +4,9 @@
 
 int main() {
 	/* creates space for the word "hello" */
-	int cap = 6; 
-	char *str = malloc(cap * sizeof(*str)); // or malloc(6 * sizeof(char));
+	int cap = strlen("hello") + 1; // number of characters for the word "hello" plus the null terminator character '\0'  
+	printf("cap: %d\n", cap);
+	char *str = malloc(cap * sizeof(*str)); // or malloc(cap * sizeof(char));
 	*str = 'h';
 	*(str + 1) = 'e';
 	*(str + 2) = 'l';
@@ -17,9 +18,6 @@ int main() {
 	int len = strlen(str);
 	printf("strlen: %d\n", len);
 
-	/* true number of char's in the word "hello" is 6 includes the null terminator */
-	int t_len = cap;   
-
 	/* prints the string from the heap */
 	printf("%s\n", str);
 
@@ -27,16 +25,35 @@ int main() {
 	printf("sizeof(str): %zu bytes\n", sizeof(str));
 
 	/* print each elements address, grows upwards */	
-	for(int i = 0; i < t_len; i ++)
+	for(int i = 0; i < cap; i ++)
 		printf("%p\n", str + i);
+	
+	/* using realloc() to reallocate str */
+	const char *hey = "hey"; // string literal, string lives in static memory, pointer variable lives in the stack	
+	char *temp = realloc(str, 4); // realloc(dest, size);
+	
+	if(temp == NULL) {
+		free(temp);
+		return 1;
+	}
 
-	const char *hey = "hey";	
-	char *temp = realloc(str, 4);
-	temp = str;
-	memcpy(temp, hey, 4);
-
+	str = temp; // str size is now 4, ['h', 'e', 'l', '\0']
+	strcpy(str, hey); // strcpy(dest, source); now becomes ['h', 'e', 'y', '\0']
+	printf("reallocated str via temp, str: %s, temp: %s\n", str, temp);
+	free(str); // also frees temp, because, str = temp;
+	
+	/* using calloc(), create an integer array of length 2 */	
+	int *nums = calloc(2, sizeof(*nums));
+	printf("[%d, %d]\n", *nums, *(nums + 1));
+	int option[] = {10,20,30,50,90,200};
+	memcpy(nums, option, 2 * sizeof(*nums));
+	printf("[%d, %d]\n", *nums, *(nums + 1));
+			   
+	
 		
-	free(str);
+			   
+	
+
 	return 0;
 	
 
