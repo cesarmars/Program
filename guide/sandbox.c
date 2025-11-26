@@ -10,8 +10,8 @@ typedef struct {
 
 Emails *make_email(char *self_name, char *self_whoami, int self_pin) {
 	Emails *make = (Emails *) malloc(sizeof(Emails));
-	strcpy(make->name, self_name);
-	strcpy(make->whoami, self_whoami);
+	make->name = self_name;
+	make->whoami = self_whoami;
 	make->pin = self_pin;
 	return make;
 }
