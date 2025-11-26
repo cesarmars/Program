@@ -17,10 +17,6 @@ Emails *make_email(char *self_name, char *self_whoami, int self_pin) {
 }
 
 int main() {
-	typedef int number;
-	number x = 10;
-	printf("using typedef to create an alias name for an exisitng type, integer, number: %d\n", x);
-
 	Emails *user = make_email("bina", "binaHerron", 303);
 	printf("name is %s, prompt is %s@linux, and your pin is %d\n",
 			user->name, user->whoami, user->pin);
