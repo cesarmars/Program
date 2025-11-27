@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <string.h>
+#include <stdlib.h>
 
 int main() {
 	/* string array(array indexing) */
@@ -28,7 +29,10 @@ int main() {
 	
 	/* string literal, read-only, the string lives in static memory can not be altered */
 	const char *name = "jeff";
-	printf("sizeof name: %lu bytes \n", sizeof(name));
+	printf("sizeof name: %zu bytes \n", sizeof(name));
+
+
+
 
 
 
