@@ -49,10 +49,6 @@ int main() {
 	memcpy(nums, option + 4, 2 * sizeof(*nums));
 	printf("[%d, %d]\n", *nums, *(nums + 1));
 	nums = realloc(nums, 0);			   
-	
-		
-			   
-	
 
 	return 0;
 	
