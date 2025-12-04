@@ -4,26 +4,29 @@
 #include <stdbool.h>
 
 typedef double temperature;
-int main() {
+int main(int num, char *val[]) {
 	temperature fahrenheit;
 	temperature celsius;  
-	char letter;
+	char *letter;
 
-	printf("type f for fahrenheit or c for celsius here: ");
-	scanf(" %c", &letter);
+	for(int i = 0; i < num; i++)
+		printf("index[%d] = %s\n", i, *(val + i));
 
-	if(letter == 'f') {
-		printf("input temperature level here: ");
-		scanf("%lf", &fahrenheit);
-		printf("temperature is %f fahrenheit\n", fahrenheit);
+	if(num == 1 || num > 2) {
+		printf("no input\n");
 	}
-	else if(letter == 'c') {
-		printf("input temperature level here: ");
-		scanf("%lf", &celsius);	
-		printf("temperature is %f celsius\n", celsius);
+	else {
+		letter = *(val + 1);
 	}
-	else 
-		printf("Error\n");
+
+	if(letter == "f")
+		printf("fahren\n");
+	if(letter == "c")
+		printf("c\n");
+
+
+	
+	
 
 	return 0;
 

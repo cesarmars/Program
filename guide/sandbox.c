@@ -2,8 +2,14 @@
 #include <string.h>
 #include <stdlib.h>
 
+void addone(int **x){
+	**x += 1;
+}
+
 int main() {
-	int x = 4;
-	printf("x is %d\n", x);
+	int a = 8;
+	int *ptr_one = &a;
+	addone(&ptr_one);
+	
 	return 0;
 }

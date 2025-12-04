@@ -7,27 +7,25 @@
  */
 
 char *sayHi() {
-	char *str = malloc(6 * sizeof(char));
-	strcpy(str, "hello");
+	char *str = (char *) malloc(6 * sizeof(char));
+	strcpy(str, "hello"); // includes the null-terminator
 	return str;
 }
 
 
 int *printArray() {
-	int *arr = malloc(2 * sizeof(*arr));
-	*arr = 1;
-	*(arr + 1) = 2;
+	int *arr = (int *) calloc(2, sizeof(int));
 	return arr;
 }
 
 int main() {
-	/* pointer function char */
+	/* pointer function char, sayHi() */
 	char *x = sayHi();
 	printf("char array is %s\n", x);
 	for(int i = 0; i < strlen(x); i++)
 		printf("index[%d] = %c\n", i, *(x + i));
 	
-	/* pointer function int */	
+	/* pointer function int, printArray() */	
 	int *y = printArray();
 	printf("int array is [%d, %d]\n", *y, *(y + 1));
 	for(int i = 0; i < 2; i++)
