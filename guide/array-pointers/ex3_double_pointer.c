@@ -1,13 +1,24 @@
 #include <stdio.h>
 void increment(int **ptr_increment) {
-	*ptr_increment += 1;
+	*ptr_increment[0] += 1;
+}
+int length_of_string(char **str){
+	int i = 0;
+	while(*str[0]++ != '\0') {
+		i ++;
+	}
+	return i;
 }
 
 int main() {
-	int x[] = {10, 20, 30};
-	int *ptr = x;
+	char *str = "hello";
+	int len = length_of_string(&str);
+	printf("length is %d\n", len);
+
+	int nums[] = {1,2};
+	int *ptr = nums;
 	increment(&ptr);
-	printf("%d and %p\n", *ptr, ptr);
+	printf("[%d, %d]\n", *ptr, *(ptr + 1));
 
 	// trivial example 
 	
