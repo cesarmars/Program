@@ -1,17 +1,12 @@
-#include<stdio.h>
-#include<string.h>
-#include<stdlib.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-	for(int i = 1; i < argc; i++) {
-		if(strcmp(*(argv + i), "hello") == 0)
-			printf("success\n");
-		else
-			printf("failed\n");
-	}
-	
-	int arr = 9;
-	int *ptr = &arr;
-	int **ptr_two = &ptr; 
+	const char *string = "HEllo";
+	const char *word = "Hello";
+
+	int result = strcmp(string, word); // argv1 > argv2 ()
+	printf("%d\n", result);
 	return 0;
 }
