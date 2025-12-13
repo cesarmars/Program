@@ -6,7 +6,7 @@ int main(int argc, char *argv[]) {
 	const char *string = "HEllo";
 	const char *word = "Hello";
 
-	int result = strcmp(string, word); // argv1 > argv2 ()
+	int result = strcmp(string, word);
 	printf("%d\n", result);
 	return 0;
 }
