@@ -3,10 +3,10 @@
 #include <stdlib.h>
 
 int main(int argc, char *argv[]) {
-	const char *string = "HEllo";
-	const char *word = "Hello";
+	int value = 1234;
+	printf("decimal = %d\n", value);
+	printf("decimal = %x\n", value);
 
-	int result = strcmp(string, word);
-	printf("%d\n", result);
+
 	return 0;
 }

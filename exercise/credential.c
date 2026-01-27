@@ -19,25 +19,24 @@ Login *show_login(char *name, char *password, int pin) {
 
 bool check(char **x) {
 	if(strcmp(*x, "cesar") == 0) {
-		Login *user = show_login("cesar", "mthes90", 12);
-		printf("name is %s, keyword is %s and your pin is %d\n",
-				user->user_name, user->key_word, user->pin);
+		Login *user = show_login("cesar", "insert_keyword", 12);
+		printf("token is %s\n", user->key_word);
 		return true;
 	}
 	else {
-		printf("incorrect name\n");
+		printf("name not found\n");
 		return false;
 	}
 }
 
-int main(int count, char *value[]) {
-	if(count == 1)
+int main(int argc, char *argv[]) {
+	if(argc == 1)
 		printf("remember to input a name\n");
-	if(count > 2)
+	if(argc > 2)
 		printf("exceeds argument size\n");
 	else
-		for(int i = 1; i < count; i ++)
-			check(value + i); 
+		for(int i = 1; i < argc; i ++)
+			check(argv + i); 
 	
 	return 0;
 }
