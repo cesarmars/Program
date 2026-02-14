@@ -4,7 +4,7 @@
 
 void swap(void *a, void *b, size_t c) {
 	*(int *)a += 1;
-	void *temp = (void *) malloc(c);
+	void *temp =  malloc(c);
 	memcpy(temp, a, c);
 	memcpy(a, b, c);
 	memcpy(b, temp, c);
