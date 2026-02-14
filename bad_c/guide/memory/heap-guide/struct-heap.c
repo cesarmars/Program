@@ -19,5 +19,6 @@ Student *make_student(int id, char *name,  char *email) {
 int main() {
 	Student *student = make_student(303, "jeff", "jeff@berkeley.edu");
 	printf("Id is %d, name is %s, and email is %s\n", student->id, student->name, student->email);
+	free(student);
 	return 0;
 }

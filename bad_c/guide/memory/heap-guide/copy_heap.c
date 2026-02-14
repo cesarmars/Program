@@ -6,5 +6,6 @@ int main() {
 	char *str = malloc(6 * sizeof(char));
 	memcpy(str, "hello", 6 *sizeof(char));
 	printf("str is %s\n", str);
+	free(str);
 	return 0;
 }
