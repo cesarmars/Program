@@ -1,29 +1,27 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <string.h>
+#include <stdlib.h>
 
-typedef struct {
+typedef struct data {
+	char *name;
 	int age;
-	char name[80];
-	double balance;
-	long savings;
-}Information;
+	int balance;
+	int savings;
+}data_t;
 
-Information makeClient(int a, const char arr[80], double b, long s) {
-	Information user;
-	user.age = a;
-	strcpy(user.name, arr);
-	user.balance = b;
-	user.savings = s;
-	return user;
+data_t *makeClient(char *name, int x, double y, long z) {
+	data_t *client = malloc(sizeof(data_t));
+	client->name = name;
+	client->age = x;
+	user->balance = y;
+	user->savings = z;
+	return client;
 }
 
-void displayClient(Information holder) {
-	printf("Client one: %d, %s, %f, %ld\n", holder.age, holder.name, holder.balance, holder.savings);
-}
 
 int main() {
-	Information one = makeClient(20, "Jared", 200.0, 5000); 
+	data_t *mask = makeClient("Jared", 20, 200.0, 5000); 
 	displayClient(one);
 	return 0;
 	
