@@ -5,11 +5,16 @@
 /*
 	general use, for creative thinking (sandbox)
 */
-int main(int argc, char *argv[]) {
-	int x[5] = {1,2,4,8};
-	char *len = (char *)x;
-	printf("%p\n", len);
+int mystrlen(char *str) {
+	int count = 0;
+	for(int i = 0; str[i] != 0; i++) 
+		count ++;
+	return count;
+}
 
+int main() {
+	char word[] = "hello";
+	printf("%d\n", mystrlen(word));
 	return 0;	
 
 }
