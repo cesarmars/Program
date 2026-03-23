@@ -7,9 +7,7 @@
 */
 
 int main() {
-	char x = 'c';
-	int y = (int) x;
-	printf("0x %x\n", y);
+	int x = 5; // sw s0 x0 5
 	return 0;	
 
 }

@@ -19,7 +19,7 @@ Login *show_login(char *name, char *password, int pin) {
 
 bool check(char **x) {
 	if(strcmp(*x, "cesar") == 0) {
-		Login *user = show_login("cesar", "insert_keyword", 12);
+		Login *user = show_login("cesar", "Disinoralcmjar43#12@", 12);
 		printf("token is %s\n", user->key_word);
 		return true;
 	}
