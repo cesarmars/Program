@@ -4,20 +4,18 @@
 
 // 64 bit machine, little-endian
 
-typedef struct points_padding{
-	int x; // 4 bytes (offset 0-3)
-		   // 4 bytes padding (offset 4-7)
-	char *string; // 8 bytes (offset 8-15)
-	int y; // 4 bytes (offset 16-19)
-		   // 4 bytes padding (offset 20-23)
-}point;
+typedef struct coords{
+	int x;
+	int y;
+}Coord;
 
+int main(){
+	Coord *first = malloc(sizeof(Coord));
+	(*first).x = 10;
+	(*first).y = 20;
 
-int main(int argc, char *argv[]){
-	point my_pt = {1,"hello",2};
-	point *ptr = &my_pt;
-	printf("%d\n", ptr->y);
-	printf("%d\n", sizeof(point));
+	printf("%d\n", first->x);
+					
 	return 0;
 }
 
