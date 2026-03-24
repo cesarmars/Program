@@ -10,6 +10,6 @@ int main(){
 	Name user;
 	user.one = temp;
 
-	printf("%s\n", *user.one);
+	printf("%s\n", *(user.one+1));
 	return 0;
 }

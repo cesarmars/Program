@@ -6,8 +6,10 @@
 	general use, for creative thinking (sandbox)
 */
 
-int main() {
-	int x = 5; // sw s0 x0 5
+int main(int argc, char *argv[]) {
+	for(int i = 0; i < argc; i++)
+		printf("%s\n", *(argv+i));
+
 	return 0;	
 
 }
