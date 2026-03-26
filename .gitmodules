@@ -1,8 +1,3 @@
-<<<<<<< HEAD
-[submodule "sp26-lab-starter"]
-	path = labs
-=======
 [ubmodule "sp26-lab-starter"]
 	path = sp26-lab-starter
->>>>>>> b40212c6afc20347e740e38ef57572d989f44870
 	url = https://github.com/61c-teach/sp26-lab-starter.git
