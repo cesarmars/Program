@@ -1,0 +1,3 @@
+[submodule "sp26-lab-starter"]
+	path = labs
+	url = https://github.com/61c-teach/sp26-lab-starter.git
