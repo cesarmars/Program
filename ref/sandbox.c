@@ -7,10 +7,13 @@
 */
 
 int main(int argc, char *argv[]) {
-<<<<<<< HEAD
-=======
+	int arr[]={1,2,4};
 
->>>>>>> b40212c6afc20347e740e38ef57572d989f44870
+	int s = 0;
+	for(int i=0; i < sizeof(arr)/sizeof(int); i++) s=s+*(arr+i);
+
+	printf("%d\n", s);
+		
 	return 0;	
 
 }
